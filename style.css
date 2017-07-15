@@ -3,7 +3,11 @@ body {
 	background-color: #194D1E;
 }
 #blackjackHead {
-	color: white;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, red ,black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, red, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, red, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, red , black); /* Standard syntax */
 	text-align: center;
 
 }
@@ -14,4 +18,13 @@ body {
 	border: solid 5px #000000;
 	display: flex;
 	justify-content: space-between;
+}
+
+.cardsHeader {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, black , yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, black, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, black, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, black , yellow); /* Standard syntax */
+  color: white;
 }

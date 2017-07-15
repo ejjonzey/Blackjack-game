@@ -67,29 +67,46 @@ function dealNewDealerHand() {
 }
 
 function hitPlayer() {
-	playerHand.push(GameData.deck[Math.floor(Math.random * GameData.deck.length)])
-}
+	// var dealCards = GameData.deck[Math.floor(Math.random() * GameData.deck.length)];
+		console.log("hitPlayer function is working via hit button click");
+		playerHand.push(GameData.deck[Math.floor(Math.random() * GameData.deck.length)]);
+		// playerHandValue.push(parseInt(dealCards));
+		
+		// console.log(playerHandValue);
+		console.log("hitPlayer picked this hit card " + playerHand[2].name + " " + playerHand[2].suit)
+	
 
+	
+}
 function hitDealer() {
-	dealerHand.push(GameData.deck[Math.floor(Math.random * GameData.deck.length)])
+	// var dealCards = GameData.deck[Math.floor(Math.random() * GameData.deck.length)];
+		console.log("hitDealer function is working via stand button click");
+		dealerHand.push(GameData.deck[Math.floor(Math.random() * GameData.deck.length)]);
+		// dealerHandValue.push(parseInt(dealCards));
+		
+		console.log("hitDealer picked this hit card " + dealerHand[2].name + " " + dealerHand[2].suit);
+		// console.log("hit card is " + dealCards)
+	
+
+	
 }
-
-
 function sumPlayerHandValue(array) {
 	console.log("sumPlayerHandValue working")
 	var sumPlayer = 0;
 	for (var i = 0; i < playerHandValue.length; i++) {
+	
 	sumPlayer = sumPlayer + array[i];
 
 	}
 	
+	
 	console.log("Player total is: " + sumPlayer);	
 }
-
 function sumDealerHandValue(array) {
 	console.log("sumDealerHandValue working")
 	var sumDealer = 0;
 	for (var i = 0; i < dealerHandValue.length; i++) {
+	
 	sumDealer = sumDealer + array[i];
 	
 	}
@@ -97,6 +114,24 @@ function sumDealerHandValue(array) {
 	console.log("Dealer total is: " + sumDealer);	
 }
 
+
+
+
+// Need: User/dealer hands, deal hand function, hit function to check for 21, stand function, check for blackjack or check for win
+
+
+
+// functions new game, hit, stand
+
+function newGameDeal() {
+	dealNewPlayerHand();
+	dealNewDealerHand();
+	console.log("dealer hand is " + dealerHand);
+	console.log("player hand is " + playerHand);
+	// alert("You have " + playerHand + " Dealer has " + dealerHand);
+	
+
+}
 
 
 // Button Event Listeners

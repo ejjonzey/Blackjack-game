@@ -29,8 +29,19 @@ function dealPlayerHand() {
 	for(var i = 0; i <= 1; i++);
 		playerHand.push(gameData.deck[Math.floor(Math.random() * gameData.length)]);
 };
+console.log(playerHand);
 
-function playerhandValue(array) {
+function dealDealerHand() {
+	console.log("dealer hand is working");
+	for (var i = 0; i <= 1; i++) {
+		dealerHand.push(gameData.deck[Math.floor(Math.random() * gameData.length)]);
+	}
+		console.log(dealerHand);
+
+}
+
+
+function playerHandValue(array) {
 	console.log("playerHandValue working");
 	var player1 = 0;
 	for(var i = 0; i < playerHandValue.length; i++) {
@@ -38,7 +49,6 @@ function playerhandValue(array) {
 	}
 }
 
-console.log(playerHand);
 // Button Event Listeners
  $("#newGame").click(function(){
      console.log("New Game Button Clicked.");

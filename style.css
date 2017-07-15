@@ -36,3 +36,15 @@ body {
 	margin: 25px;
 	flex-shrink: 1;
 }
+
+#hit {
+	height: 150px;
+	width: 200px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 50px;
+	background-color: #56f442;
+	font-weight: bold;
+	color: white;
+}

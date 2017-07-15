@@ -1,3 +1,51 @@
+
 body {
 	background-color: green;
-};
+}
+#bjMainHead {
+	color: white;
+	text-align: center;
+
+}
+#gameBoard {
+	height: 500px;
+	width: 600px;
+	margin: auto;
+	border: solid 15px black;
+	display: flex;
+	flex-direction: column;
+
+}
+.cardsHeader {
+	color: white;
+	font-size: 22px;
+	margin: 5px 5px 5px 30px;
+}
+#playerCardsDiv, #dealerCardsDiv {
+	background-color: rgba(0, 0, 0, .25);
+	height: 200px;
+	width: 550px;
+	margin: auto;
+}
+#newGame, #hit, #stand {
+	height: 50px;
+	width: 50px;
+
+}
+#buttons {
+	height: 50px;
+	width: 340px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#appMessages {
+	color: white;
+	font-size: 20px;
+	margin: auto;
+	width: 600px;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-align: center;
+	border: solid 5px green;
+}

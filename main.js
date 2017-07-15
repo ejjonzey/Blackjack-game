@@ -1,18 +1,10 @@
 $(function(){
-// Might not need a controller
-// var blackJackController = {
-// 	playerCardsValue: 0,
-// 	dealerCardsValue: 0,
-// 	dealerTurn: false,
 
-// }
 
 // Need to build card values and link images and store them
 
 var playerHand = [];
 var dealerHand = [];
-// var playerHandValue = [];
-// var dealerHandValue = [];
 
 
 // Deck Setup
@@ -24,12 +16,11 @@ var GameData = {
 	    
 	    for( var n = 0; n < names.length; n++ ) {
 	        for( var s = 0; s < suits.length; s++ ) {
-	            // this.deck.push(names[n] + " " + suits[s]);
 	            GameData.deck.push({
 	            	name: parseInt(names[n]),
 	            	suit: suits[s],
 	            	player: null,
-	            	image: null,
+	            	image: (parseInt(valueOfCard[n] + ' ' + suits[s] + ".svg")),
 	            });
 	        }
 	    }
@@ -59,7 +50,7 @@ function dealNewDealerHand() {
 	console.log("dealNewDealerHand function is working");
 	for (var i = 0; i <= 1; i++) {
 		dealerHand.push(GameData.deck[Math.floor(Math.random() * GameData.deck.length)]);
-		// dealerHandValue.push(parseInt(dealerHand[i]));
+		dealerHandValue.push(parseInt(dealerHand[i]));
 	}
 	console.log(dealerHand);
 	console.log("these are the value of the cards in dealerHand")
@@ -133,19 +124,56 @@ function newGameDeal() {
 
 }
 
+function hit(){
+// 	sumPlayerHandValue(playerHandValue);
+// 	if (playerHandValue <= 21) {
+	
 
-// Button Event Listeners
- $("#newGame").click(function(){
-     console.log("New Game Button Clicked.");
+// }
+hitPlayer();
+console.log(playerHand[2].name + " " + playerHand[2].suit);
+
+// then checking total value of cards against > 21 = bust	
+}
+
+function winOrLose() {
+	
+//  checking total value of cards to see win or lose vs dealerhand
+}
+
+function stand() {
+	// will hit dealer till >=17, if >21 dealer loses
+	// sumDealerHandValue(dealerHandValue);
+	// while (dealerHandValue < 17) {
+	// 	hitDealer();
+	// }
+	console.log("stand button calling stand function working")
+	hitDealer();
+	// sumPlayerHandValue(playerHandValue);
+	// sumDealerHandValue(dealerHandValue);
+
+}
+
+// Generate card function: pulling from the player/dealer hands and creating the dom version of the card/
+function createCardsOnBoard() {
+
+}
+
+
+
+// // Button Event Listeners
+$("#newGame").click(function(){
+    console.log("New Game Button Clicked.");
+    newGameDeal();
+    // call  hit function here
+});
+$("#hit").click(function(){
+    console.log("Hit Button Clicked.");
+    hit();
+});
+$("#stand").click(function(){
+    console.log("Stand Button Clicked.");
+    stand();
  });
-
-
- $("#hit").click(function(){
-     console.log("Hit Button Clicked.");
- });
-
-
- $("#stand").click(function(){
-     console.log("Stand Button Clicked.");
- });
+    // call stand function here
 });

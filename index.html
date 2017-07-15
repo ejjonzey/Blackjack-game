@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Blackjack by Eric Jonelunas</title>
-<link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8">
+    <title>BlackJack in JavaScript</title>
+    <meta name="Kris Green" content="Blackjack Game">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+  </head>
+  <body>
+    
+    
+    <h1 id="bjMainHead">BlackJack</h1>
+    <div id="gameBoard">
+      <div id="dealerHeadDiv">
+        <h3 class="cardsHeader">Dealer's Cards</h3>
+      </div>
+      
+      <div id="dealerCardsDiv"></div>
+      
+      <div id="playerCardsDiv"></div>
+      
+      <div id="playerHeadDiv">
+        <h3 class="cardsHeader">Player's Cards</h3>
+      </div>
 
-</head>
-<body>
-<button id="newGame">New Game</button>
-<button id="hit">Hit</button>
-<button id="stand">Stand</button> 
-	<script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
+
+    </div> 
+    <div id="buttons">
+      <button id="newGame">NEW GAME</button>
+      <button id="hit">HIT</button>
+      <button id="stand">STAND</button> 
+    </div>
+
+    <div id="appMessages">Click New Game to begin.</div>
+    
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>  
-  <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="main.js"></script>
     
-</body>
+  </body>
 </html>

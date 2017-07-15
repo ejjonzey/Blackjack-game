@@ -44,7 +44,44 @@ body {
 	text-align: center;
 	vertical-align: middle;
 	font-size: 50px;
-	background-color: #56f442;
+	background-color: #5b876b;
 	font-weight: bold;
 	color: white;
+}
+
+#stand {
+	height: 150px;
+	width: 200px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 50px;
+	background-color: #875d5f;
+	font-weight: bold;
+	color: white;
+}
+
+#newGame {
+	height: 150px;
+	width: 200px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 50px;
+	background-color: #a5a6b7;
+	font-weight: bold;
+	color: white;
+}
+
+#buttons {
+	text-align: center;
+	margin: 2px;
+}
+#buttons2 {
+	text-align: center;
+	margin: 2px;
+}
+#buttons3 {
+	text-align: center;
+	margin: 2px;
 }

@@ -28,3 +28,11 @@ body {
   background: linear-gradient(to right, black , yellow); /* Standard syntax */
   color: white;
 }
+
+#playerCardsDiv, #dealerCardsDiv {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 475px;
+	width: 400px;
+	margin: 25px;
+	flex-shrink: 1;
+}

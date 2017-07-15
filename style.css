@@ -1,6 +1,6 @@
 
 body {
-	background-color: #37393d;
+	background-color: #194D1E;
 }
 #bjMainHead {
 	color: white;
@@ -11,11 +11,10 @@ body {
 	height: 300px;
 	width: 1000px;
 	margin: auto;
-	border: solid 5px green;
+	border: solid 5px #000000;
 	display: flex;
 	
 	justify-content: space-between;
-	background-image: url('http://i.imgur.com/Ev61wOE.jpg');
 
 }
 .cardsHeader {

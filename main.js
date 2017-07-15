@@ -1,18 +1,8 @@
 $(function(){
-// Might not need a controller
-// var blackJackController = {
-// 	playerCardsValue: 0,
-// 	dealerCardsValue: 0,
-// 	dealerTurn: false,
-
-// }
-
-// Need to build card values and cardLink images and store them
 
 var playerHand = [];
 var dealerHand = [];
-// var playerHandValue = [];
-// var dealerHandValue = [];
+
 
 
 // Deck Setup
@@ -24,7 +14,6 @@ var GameData = {
 	    
 	    for( var n = 0; n < valueOfCard.length; n++ ) {
 	        for( var s = 0; s < suits.length; s++ ) {
-	            // this.deck.push(valueOfCard[n] + " " + suits[s]);
 	            GameData.deck.push({
 	            	value: parseInt(valueOfCard[n]),
 	            	suit: suits[s],
@@ -49,34 +38,23 @@ function dealNewPlayerHand() {
 	console.log('dealNewPlayerHand function is working');
 	for (var i = 0; i <= 1; i++) {
 		playerHand.push(GameData.deck[Math.floor(Math.random() * GameData.deck.length)]);
-		// playerHandValue.push(parseInt(playerHand[i]));
+		
 	}
 	var buildCardImage1 = playerHand[0].image;
-	// for (var i = 0; i <= 1; i++) {
+	
 		var cardLink = document.createElement("a");
-		//cardLink.appendChild(document.createTextNode("Anchor"));
-		cardLink.href = "http://stackoverflow.com/questions/7932759/dom-appendchild-to-insert-images/7932803";
-		cardLink.alt = "playerHand.image isnt linking to card";
-
-
 		var img = document.createElement("img");
 		img.src = buildCardImage1;
 		cardLink.appendChild(img);
 		document.getElementById("playerCardsDiv").appendChild(cardLink);
-	// }
+	
 	var buildCardImage2 = playerHand[1].image;
-	// for (var i = 0; i <= 1; i++) {
 		var cardLink = document.createElement("a");
-		//cardLink.appendChild(document.createTextNode("Anchor"));
-		cardLink.href = "http://stackoverflow.com/questions/7932759/dom-appendchild-to-insert-images/7932803";
-		cardLink.alt = "playerHand.image isnt linking to card";
-
-
 		var img = document.createElement("img");
 		img.src = buildCardImage2;
 		cardLink.appendChild(img);
 		document.getElementById("playerCardsDiv").appendChild(cardLink);
-	// }
+	
 	
 	
 	console.log(playerHand);
@@ -89,12 +67,12 @@ function dealNewDealerHand() {
 	console.log("dealNewDealerHand function is working");
 	for (var i = 0; i <= 1; i++) {
 		dealerHand.push(GameData.deck[Math.floor(Math.random() * GameData.deck.length)]);
-		// dealerHandValue.push(parseInt(dealerHand[i]));
+		
 	}
 	var buildCardImage1 = dealerHand[0].image;
-	// for (var i = 0; i <= 1; i++) {
+	
 		var cardLink = document.createElement("a");
-		//cardLink.appendChild(document.createTextNode("Anchor"));
+		
 		cardLink.href = "http://stackoverflow.com/questions/7932759/dom-appendchild-to-insert-images/7932803";
 		cardLink.alt = "playerHand.image isnt linking to card";
 
@@ -104,11 +82,11 @@ function dealNewDealerHand() {
 			
 		cardLink.appendChild(img);
 		document.getElementById("dealerCardsDiv").appendChild(cardLink);
-	// }
+	
 	var buildCardImage2 = dealerHand[1].image;
-	// for (var i = 0; i <= 1; i++) {
+	
 		var cardLink = document.createElement("a");
-		//cardLink.appendChild(document.createTextNode("Anchor"));
+		
 		cardLink.href = "http://stackoverflow.com/questions/7932759/dom-appendchild-to-insert-images/7932803";
 		cardLink.alt = "playerHand.image isnt linking to card";
 
@@ -118,7 +96,7 @@ function dealNewDealerHand() {
 		
 		cardLink.appendChild(img);
 		document.getElementById("dealerCardsDiv").appendChild(cardLink);
-	// }
+	
 	console.log(dealerHand);
 	console.log("these are the value of the cards in dealerHand")
 	
@@ -206,7 +184,7 @@ function sumDealerHandValue(array) {
 
 
 
-// Need: User/dealer hands, deal hand function, hit function to check for 21, stand function, check for blackjack or check for win
+
 
 
 

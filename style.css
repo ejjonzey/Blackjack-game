@@ -1,6 +1,6 @@
 
 body {
-	background-color: green;
+	background-color: #37393d;
 }
 #bjMainHead {
 	color: white;
@@ -8,12 +8,14 @@ body {
 
 }
 #gameBoard {
-	height: 500px;
-	width: 600px;
+	height: 300px;
+	width: 1000px;
 	margin: auto;
-	border: solid 15px black;
+	border: solid 5px green;
 	display: flex;
-	flex-direction: column;
+	
+	justify-content: space-between;
+	background-image: url('http://i.imgur.com/Ev61wOE.jpg');
 
 }
 .cardsHeader {
@@ -22,30 +24,68 @@ body {
 	margin: 5px 5px 5px 30px;
 }
 #playerCardsDiv, #dealerCardsDiv {
-	background-color: rgba(0, 0, 0, .25);
-	height: 200px;
-	width: 550px;
-	margin: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 250px;
+	width: 450px;
+	margin: 25px;
+	flex-shrink: 1;
 }
 #newGame, #hit, #stand {
-	height: 50px;
-	width: 50px;
+	height: 25px;
+	width: 100px;
 
 }
-#buttons {
+#hit {
 	height: 50px;
-	width: 340px;
+	width: 240px;
 	margin: auto;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 24px;
+	background-color: blue;
+	font-weight: bold;
+	color: white;
+}
+#stand {
+	height: 50px;
+	width: 240px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 24px;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+}
+#newGame {
+	height: 50px;
+	width: 240px;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 24px;
+	background-color: green;
+	font-weight: bold;
+	color: white;
 }
 #appMessages {
 	color: white;
 	font-size: 20px;
-	margin: auto;
+	margin: 10px auto;
 	width: 600px;
 	background-color: rgba(0, 0, 0, 0.3);
 	text-align: center;
 	border: solid 5px green;
+}
+#buttons {
+	text-align: center;
+	margin: 2px;
+}
+#buttons2 {
+	text-align: center;
+	margin: 2px;
+}
+#buttons3 {
+	text-align: center;
+	margin: 2px;
 }

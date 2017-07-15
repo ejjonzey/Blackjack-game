@@ -1,4 +1,4 @@
-
+&(function() {
 
 
 // Button Event Listeners
@@ -11,7 +11,8 @@
      console.log("Hit Button Clicked.");
  });
 
- 
+
  $("#stand").click(function(){
      console.log("Stand Button Clicked.");
  });
+});

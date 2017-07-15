@@ -75,13 +75,29 @@ function hitDealer() {
 }
 
 
-function playerHandValue(array) {
-	console.log("playerHandValue working");
-	var player1 = 0;
-	for(var i = 0; i < playerHandValue.length; i++) {
-		player1 = plyer1 + array[i];
+function sumPlayerHandValue(array) {
+	console.log("sumPlayerHandValue working")
+	var sumPlayer = 0;
+	for (var i = 0; i < playerHandValue.length; i++) {
+	sumPlayer = sumPlayer + array[i];
+
 	}
+	
+	console.log("Player total is: " + sumPlayer);	
 }
+
+function sumDealerHandValue(array) {
+	console.log("sumDealerHandValue working")
+	var sumDealer = 0;
+	for (var i = 0; i < dealerHandValue.length; i++) {
+	sumDealer = sumDealer + array[i];
+	
+	}
+	
+	console.log("Dealer total is: " + sumDealer);	
+}
+
+
 
 // Button Event Listeners
  $("#newGame").click(function(){

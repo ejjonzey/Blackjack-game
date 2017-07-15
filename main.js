@@ -66,6 +66,13 @@ function dealNewDealerHand() {
 	
 }
 
+function hitPlayer() {
+	playerHand.push(GameData.deck[Math.floor(Math.random * GameData.deck.length)])
+}
+
+function hitDealer() {
+	dealerHand.push(GameData.deck[Math.floor(Math.random * GameData.deck.length)])
+}
 
 
 function playerHandValue(array) {

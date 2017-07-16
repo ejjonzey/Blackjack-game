@@ -5,8 +5,7 @@ var dealerHand = [];
 
 
 
-// Deck Setup
-var GameData = {
+	DeckObjects = {
 	deck: [],
 	destroyDeck: function() {
 		this.deck = [];
@@ -31,7 +30,8 @@ var GameData = {
 	    
 	    for( var n = 0; n < cardType.length; n++ ) {
 	        for( var s = 0; s < suits.length; s++ ) {
-	            GameData.deck.push({
+	        
+	         DeckObjects.deck.push({
 	            	value: cardType[n].value,
 	            	suit: suits[s],
 	            	player: null,
@@ -39,19 +39,19 @@ var GameData = {
 	            });
 	        }
 	    }
-	    console.log(GameData.deck);  
-	}
+	    //console.log(DeckObjects.deck);  
 }
-GameData.buildDeck();
+}
+DeckObjects.buildDeck();
 
 function getCard(hand){
-	console.log('RandNum: ', Math.floor(Math.random() * GameData.deck.length))
-	console.log('RandCard: ', GameData.deck[Math.floor(Math.random() * GameData.deck.length)])
-	let newCard = GameData.deck[Math.floor(Math.random() * GameData.deck.length)]
-	GameData.deck = $.grep(GameData.deck, function(value){
+	//console.log('RandNum: ', Math.floor(Math.random) * DeckObjects.deck.length))
+	//console.log('RandCard ', DeckObjects.deck[Math.floor(Math.random() * DeckObjects.deck.length)])
+	let newCard = DeckObjects.deck[Math.floor(Math.random() * DeckObjects.deck.length)]
+	DeckObjects.deck = $.grep(DeckObjects.deck, function(value){
 		return value != newCard;
 	})
-	console.log(GameData.deck.length)
+	console.log(DeckObjects.deck.length)
 	hand.push(newCard);
 }
 
@@ -64,27 +64,42 @@ function dealHand(playerType) {
 		hand = dealerHand;
 	};
 	
-	// console.log('function is working: ' + playerType);
+	console.log('function is working: ' + playerType);
 
 	for (var i = 0; i <= 1; i++) {
 		getCard(hand);
 	}
 
-	var buildCardImage1 = hand[0].image;
-		var cardImage = document.createElement("a");
-		var img = document.createElement("img");
-		img.src = buildCardImage1;
-		cardImage.appendChild(img);
-		document.getElementById(`${playerType}CardsDiv`).appendChild(cardImage);
-	
-	var buildCardImage2 = hand[1].image;
-		var cardImage = document.createElement("a");
-		var img = document.createElement("img");
-		img.src = buildCardImage2;
-		cardImage.appendChild(img);
-		document.getElementById(playerType + "CardsDiv").appendChild(cardImage);
-	console.log(hand);	
+var getValue = function(hand) {
+
+    if(card % 13 === 0 || card % 13 === 11 || card % 13 === 12){
+        return 10;   
+    }
+    if(card % 13 === 1){
+        return 11;   
+    }
+    else{
+        return card % 13;
+    }
+    console.log(hand);
 }
+
+var buildCardImage1 = hand[0].image;
+var cardImage = document.createElement("a");
+var img = document.createElement("img");
+img.src = buildCardImage1;
+cardImage.appendChild(img);
+document.getElementById(`${playerType}CardsDiv`).appendChild(cardImage);
+	
+var buildCardImage2 = hand[1].image;
+var cardImage = document.createElement("a");
+var img = document.createElement("img");
+img.src = buildCardImage2;
+cardImage.appendChild(img);
+document.getElementById(playerType + "CardsDiv").appendChild(cardImage);
+console.log(hand);	
+}
+
 
 function hitPlayer(playerType) {
 	let hand = []
@@ -92,8 +107,8 @@ function hitPlayer(playerType) {
 		hand = playerHand;
 	} else {
 		hand = dealerHand;
-	};
-	console.log("hitPlayer function is working via hit button click");
+};
+	/*console.log("hitPlayer function is working via hit button click");
 	getCard(hand);
 	var buildCardImage2 = hand[2].image;
 	var cardImage = document.createElement("a");
@@ -103,10 +118,13 @@ function hitPlayer(playerType) {
 	document.getElementById(`${playerType}CardsDiv`).appendChild(cardImage);
 	console.log(hand);	
 	total = hand.reduce( function(cnt,o){ return cnt + o.value; }, 0);
-	console.log("THIS IS THE PLAYER SUM " + total);
+	console.log("THIS IS THE PLAYER SUM " + total);*/
 
 	
 }
+
+function score(hand){};
+
 function sumhandValue(array) {
 	console.log("sumhandValue working")
 	var sumPlayer = 0;
@@ -141,7 +159,7 @@ function newGameDeal() {
 	dealHand('dealer');
 	console.log("dealer hand is " + dealerHand);
 	console.log("player hand is " + playerHand);
-	console.log(GameData.deck)
+	//console.log(DeckObjects.deck)
 }
 
 function resetGame() {
@@ -149,17 +167,19 @@ function resetGame() {
 	$('#dealerCardsDiv').html('');
 	playerHand = [];
 	dealerHand = [];
-	GameData.destroyDeck();
-	GameData.buildDeck();
+	DeckObjects.destroyDeck();
+	DeckObjects.buildDeck();
 
 }
+
+
 
 function hit(){
 // 	if (haValue <= 21) {
 
 // }
 hitPlayer();
-console.log("This is the player's hit card " + han[2].value + " " + ha[2].suit);
+console.log("This is the player's hit card " + hand.value + " " + hand.suit);
 
 // then checking total value of cards against > 21 = bust	
 }

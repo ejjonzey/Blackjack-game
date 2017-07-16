@@ -11,6 +11,7 @@ body {
 	text-align: center;
 	justify-content: space-between;
 }
+
 #gameBoard {
 	height: 500px;
 	width: 1000px;
@@ -30,7 +31,7 @@ body {
 
 #playerCardsDiv, #dealerCardsDiv {
 	background-color: rgba(0, 0, 0, 0.5);
-	height: 475px;
+	height: 510px;
 	width: 400px;
 	margin: 25px;
 	flex-shrink: 1;
@@ -51,7 +52,7 @@ body {
 #stand {
 	height: 150px;
 	width: 200px;
-	margin: auto;
+	margin: ;
 	text-align: center;
 	vertical-align: middle;
 	font-size: 50px;
@@ -75,6 +76,7 @@ body {
 #buttons {
 	text-align: center;
 	margin: 15px;
+	padding: 25px;
 }
 
 #newGameStart {

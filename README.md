@@ -5,3 +5,9 @@ This is a the begining of a blackjack game made with javascript.  The object of 
 The dealer musht hit on amything less than 17.  And stand on anything between 17-21.
 
 If player or dealer has blackjack, that player wins.  If both player and dealer have blackjack, results in a tie.    
+
+https://trello.com/b/NKxSGP8i/wdi-project-one
+
+https://www.bitballoon.com/sites/hairdresser-paula-68841
+
+I will be adding a hit function and a way for player to bet.

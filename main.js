@@ -1,8 +1,6 @@
 $(function(){
 
-var playerHand = [];
-var dealerHand = [];
-
+var playerType = 'player';
 
 
 	DeckObjects = {
@@ -56,6 +54,7 @@ function getCard(hand){
 }
 
 // Deal a new hand
+
 function dealHand(playerType) {
 	let hand = []
 	if(playerType === 'player') {
@@ -64,41 +63,17 @@ function dealHand(playerType) {
 		hand = dealerHand;
 	};
 	
-	console.log('function is working: ' + playerType);
-
+	//console.log('function is working: ', playerType);
+	//console.log(dealerHand);
 	for (var i = 0; i <= 1; i++) {
 		getCard(hand);
 	}
-	
-
-function score(hand){};
-
-function sumhandValue() {
-	console.log("sumhandValue working")
-	var sumPlayer = 0;
-	for (var i = 0; i < hand.length; i++) {
-	
-	sumPlayer = sumPlayer + array[i];
-
-}
-	console.log("Player total is: " + sumPlayer);	
-}
 
 
 
-var getValue = function(hand) {
 
-    if(card % 13 === 0 || card % 13 === 11 || card % 13 === 12){
-        return 10;   
-    }
-    if(card % 13 === 1){
-        return 11;   
-    }
-    else{
-        return card % 13;
-    }
-    console.log(hand);
-}
+
+
 
 var buildCardImage1 = hand[0].image;
 var cardImage = document.createElement("a");
@@ -112,31 +87,20 @@ var cardImage = document.createElement("a");
 var img = document.createElement("img");
 img.src = buildCardImage2;
 cardImage.appendChild(img);
-document.getElementById(playerType + "CardsDiv").appendChild(cardImage);
-console.log(hand);	
+document.getElementById(`${playerType}CardsDiv`).appendChild(cardImage);
+//console.log(hand);	
 }
 
-/*function score(hand){};
 
-function sumhandValue() {
-	console.log("sumhandValue working")
-	var sumPlayer = 0;
-	for (var i = 0; i < hand.length; i++) {
-	
-	sumPlayer = sumPlayer + array[i];
-
-	}
-	console.log("Player total is: " + sumPlayer);	
-}*/
 
 
 
 function hitPlayer(playerType) {
 	let hand = []
 	if(playerType === 'player') {
-		hand = playerHand;
+		hand = resetGame.playerHand;
 	} else {
-		hand = dealerHand;
+		hand = resetGame.dealerHand;
 };
 	
 }
@@ -153,20 +117,23 @@ function newGameDeal() {
 	resetGame();
 	dealHand('player');
 	dealHand('dealer');
-	console.log("dealer hand is " + dealerHand);
-	console.log("player hand is " + playerHand);
+	console.log(currentHand(dealerHand, "dealer"));
+	console.log(currentHand(playerHand, "player"));
+
 	//console.log(DeckObjects.deck)
 }
 
-function score(playerType) {
-	let score = []
-	if(playertype === "player") {
-	} else {
-		score = points;
-	};
-}
 
-//console.log("Player total is: " + points);
+
+
+function currentHand(hand, playerType){
+	var message = `${playerType} hand is `;
+	hand.forEach((card) => {
+		message += `${card.value} of ${card.suit}, `
+	});
+	return message;
+};
+
 
 
 
@@ -175,6 +142,8 @@ function resetGame() {
 	$('#dealerCardsDiv').html('');
 	playerHand = [];
 	dealerHand = [];
+	playerValue = 0;
+	dealerValue = 0;
 	DeckObjects.destroyDeck();
 	DeckObjects.buildDeck();
 
@@ -183,35 +152,65 @@ function resetGame() {
 
 
 function hit(){
-// 	if (haValue <= 21) {
 
-// }
-hitPlayer();
-console.log("This is the player's hit card " + hand.value + " " + hand.suit);
-
-// then checking total value of cards against > 21 = bust	
+	//player value with cards added
+for(i = 0; i < dealerHand.length; i++){
+		var cardValue = playerHand.length[i].value;
+		playerValue += cardValue;
+	}
+for(i = 0; i < dealerHand.length; i++){
+	var cardValue = dealerHand[i].value;
+	dealerValue += cardValue;
 }
+	
+
+	}
+	
+
+
+hitPlayer();
+//console.log("This is the player's hit card " + hand.value + " " + hand.suit);
+
+//then checking total value of cards against > 21 = bust	
+
 
 function winOrLose() {
-	
-//  checking total value of cards to see win or lose vs dealerhand
+// player value with cards added.
+for(i = 0; i < playerHand.length; i++){
+	var cardValue = playerHand[i].value;
+	playerValue  += cardValue;
 }
 
+//dealer value with crads added.
+for(i = 0; i < dealerHand.length; i++){
+	var cardValue = dealerHand[i].value;
+	dealerValue += cardValue;
+}
+//  checking total value of cards to see win or lose vs dealerhand
+if(playerValue > dealerValue){
+	alert('player wins');
+	console.log('player wins');
+} else{
+	alert('dealer wins');
+	console.log('dealer wins');
+
+};
+};
+
+
+
+
 function stand() {
+	winOrLose();
 	// will hit dealer till >=17, if >21 dealer loses
 	
 	// while (dealerHandValue < 17) {
 	
 	// }
 	console.log("stand button calling stand function working")
-	hitDealer();
+	//hitDealer();
 	
 	
-
-}
-
-// Generate card function: pulling from the player/dealer hands and creating the dom version of the card/
-function createCardsOnBoard() {
 
 }
 
@@ -219,7 +218,7 @@ function createCardsOnBoard() {
 
 // // Button Event Listeners
 $("#newGame").click(function(){
-    console.log("New Game Button Clicked.");
+    //console.log("New Game Button Clicked.");
     newGameDeal();
     // call  hit function here
 });

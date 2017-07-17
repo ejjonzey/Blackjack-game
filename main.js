@@ -51,7 +51,7 @@ function getCard(hand){
 	DeckObjects.deck = $.grep(DeckObjects.deck, function(value){
 		return value != newCard;
 	})
-	console.log(DeckObjects.deck.length)
+	//console.log(DeckObjects.deck.length)
 	hand.push(newCard);
 }
 
@@ -69,6 +69,22 @@ function dealHand(playerType) {
 	for (var i = 0; i <= 1; i++) {
 		getCard(hand);
 	}
+	
+
+function score(hand){};
+
+function sumhandValue() {
+	console.log("sumhandValue working")
+	var sumPlayer = 0;
+	for (var i = 0; i < hand.length; i++) {
+	
+	sumPlayer = sumPlayer + array[i];
+
+}
+	console.log("Player total is: " + sumPlayer);	
+}
+
+
 
 var getValue = function(hand) {
 
@@ -100,32 +116,9 @@ document.getElementById(playerType + "CardsDiv").appendChild(cardImage);
 console.log(hand);	
 }
 
+/*function score(hand){};
 
-function hitPlayer(playerType) {
-	let hand = []
-	if(playerType === 'player') {
-		hand = playerHand;
-	} else {
-		hand = dealerHand;
-};
-	/*console.log("hitPlayer function is working via hit button click");
-	getCard(hand);
-	var buildCardImage2 = hand[2].image;
-	var cardImage = document.createElement("a");
-	var img = document.createElement("img");
-	img.src = buildCardImage2;
-	cardImage.appendChild(img);
-	document.getElementById(`${playerType}CardsDiv`).appendChild(cardImage);
-	console.log(hand);	
-	total = hand.reduce( function(cnt,o){ return cnt + o.value; }, 0);
-	console.log("THIS IS THE PLAYER SUM " + total);*/
-
-	
-}
-
-function score(hand){};
-
-function sumhandValue(array) {
+function sumhandValue() {
 	console.log("sumhandValue working")
 	var sumPlayer = 0;
 	for (var i = 0; i < hand.length; i++) {
@@ -134,22 +127,25 @@ function sumhandValue(array) {
 
 	}
 	console.log("Player total is: " + sumPlayer);	
+}*/
+
+
+
+function hitPlayer(playerType) {
+	let hand = []
+	if(playerType === 'player') {
+		hand = playerHand;
+	} else {
+		hand = dealerHand;
+};
+	
 }
+
+	
+
 
 
   
-
-function sumDealerHandValue(array) {
-	console.log("sumDealerHandValue working")
-	var sumDealer = 0;
-	for (var i = 0; i < dealerHand[i].value.length; i++) {
-	
-	sumDealer = sumDealer + array[i];
-	
-	}
-	
-	console.log("Dealer total is: " + sumDealer);	
-}
 
 // functions new game, hit, stand
 
@@ -161,6 +157,18 @@ function newGameDeal() {
 	console.log("player hand is " + playerHand);
 	//console.log(DeckObjects.deck)
 }
+
+function score(playerType) {
+	let score = []
+	if(playertype === "player") {
+	} else {
+		score = points;
+	};
+}
+
+//console.log("Player total is: " + points);
+
+
 
 function resetGame() {
 	$('#playerCardsDiv').html('');
@@ -211,7 +219,6 @@ function createCardsOnBoard() {
 
 // // Button Event Listeners
 $("#newGame").click(function(){
-	//if(var i = 0, var i >= newGameDeal.length; i--);
     console.log("New Game Button Clicked.");
     newGameDeal();
     // call  hit function here
